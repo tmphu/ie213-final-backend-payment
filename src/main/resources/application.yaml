@@ -1,0 +1,23 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: payment
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_ie213_payment
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+vnpay:
+  url: https://sandbox.vnpayment.vn/paymentv2/vpcpay.html?
+  secret: WVUWRSODKWPRSOARATWYODMLAGHTGDOV
+  tmn-code: 1SEB8A12
+  version: 2.1.0
+  command: pay
+  order-type:
+  order-info:
+  curr-code: VND
+  locale: vn
+  return-url: http://localhost:3000/payment/
