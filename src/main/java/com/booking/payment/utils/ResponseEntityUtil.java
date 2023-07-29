@@ -6,7 +6,7 @@ import com.booking.payment.exception.BadRequestException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.exception.ConstraintViolationException;
+//import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +43,7 @@ public class ResponseEntityUtil {
         //  Response Bad request
         if (throwable instanceof IllegalArgumentException
                 || throwable instanceof HttpMessageNotReadableException
-                || throwable instanceof ConstraintViolationException
+//                || throwable instanceof ConstraintViolationException
                 || throwable instanceof MethodArgumentTypeMismatchException
                 || throwable instanceof BadRequestException) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Response.badRequest(languageEnum, messageSource));
