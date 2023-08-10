@@ -6,4 +6,5 @@ public class Constants {
     }
 
     public static final String DEFAULT_LANGUAGE = "vi";
+    public static final String EN = "en";
 }

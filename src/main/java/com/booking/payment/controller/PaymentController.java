@@ -40,12 +40,4 @@ public class PaymentController {
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
-    @GetMapping("/vn-pay/callback")
-    public ResponseEntity<Response> returnURL(@RequestParam(defaultValue = Constants.DEFAULT_LANGUAGE) LanguageEnum language,
-                                              @RequestParam Map<String, String> request) {
-        String message = MessageUtil.toMessage("response.success", language, this.messageSource);
-        Response response = new Response(CodeResponse.SUCCESS.getValue(), message);
-        this.paymentService.callback(request);
-        return new ResponseEntity<>(response, HttpStatus.OK);
-    }
 }
